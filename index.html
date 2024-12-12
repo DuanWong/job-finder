@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr ">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Duan Wang">
+    <meta name="description" content="My web project">
+    <meta name="keyword" content="html, css, web, seo, web development, JS">
+    <title>Fakebook</title>
+    <link rel="icon" href="./assets/img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mrspecht/cdn/reset.css" media="all">
+    <link rel="stylesheet" href="./assets/css/home.css" media="all">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" >
+    <script type="module" src="./assets/js/home.js"></script>
+  </head>
+  <body>
+    <header>
+      <section class="container space flex">
+        <div class="fakebook-box">
+          <h1>Fakebook</h1>
+        </div>
+        <div class="items flex">
+          <p>Friends</p>
+          <p>Pages</p>
+          <p>Groups</p>
+          <p>My ads</p>
+          <p>Settings</p>
+        </div>
+        <div class="image-box grid">
+          <img src="./assets/img/profile image.png" class="profile-image">
+        </div>
+      </section>
+    </header>
+    <main class="container grid">
+       <section class="post-box">
+          <div>
+            <textarea class="message" cols="3" rows="3" placeholder="What's new, Duan?"></textarea>
+          </div>
+          <div>
+            <input type="file" id="file-upload" class="image-upload" accept="image/*">
+            <label for="file-upload" class="custom-upload-button">
+               <i class="image-button fa-regular fa-image"></i>
+            </label>
+            <p class="file-name"></p>
+            <button class="post-button" disabled>Post</button>
+          </div>
+       </section>
+       <section class='posts-section'></section>
+    </main>
+    <footer></footer>
+    <section class="info-modal modal">
+      <div class="modal-content grid">
+          <h2>Welcome! <span class='subscriber-name'></span></h2>
+          <img src="./assets/img/profile image.png" class="modal-image">
+          <div>
+            <h3>Profile:</h3>
+            <p class="subscriber-content"></p>
+          </div>
+      </div>
+    </section>
+  </body>
+</html>
