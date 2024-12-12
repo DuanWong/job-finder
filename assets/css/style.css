@@ -1,0 +1,145 @@
+@charset "utf-8";
+
+
+
+/* Reset default browser styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+}
+
+/* Common Styles for Login and Registration Pages */
+.login-page, .registration-page {
+    display: flex;
+    height: 100%;
+}
+
+/* Left Side Image */
+.login-image, .registration-image {
+    flex: 1;
+    background-color: #0073b1; /* LinkedIn-like blue */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-image img, .registration-image img {
+    width: 80%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Right Side Form Container */
+.login-form-container, .registration-form-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    background-color: #ffffff;
+}
+
+.login-form-container h2, .registration-form-container h2 {
+    margin-bottom: 20px;
+    color: #0073b1;
+    text-align: center;
+}
+
+form {
+    width: 100%;
+    max-width: 400px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    margin-bottom: 5px;
+    color: #333333;
+    font-weight: 600;
+}
+
+.input-group input {
+    padding: 10px 15px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input:focus {
+    border-color: #0073b1;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 115, 177, 0.3);
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #0073b1;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #005582;
+}
+
+.error-message {
+    color: red;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.register-link, .login-link {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.register-link a, .login-link a {
+    color: #0073b1;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register-link a:hover, .login-link a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .login-page, .registration-page {
+        flex-direction: column;
+    }
+
+    .login-image, .registration-image {
+        display: none; /* Hide the image on smaller screens */
+    }
+
+    .login-form-container, .registration-form-container {
+        padding: 20px;
+    }
+
+    form {
+        max-width: 100%;
+    }
+}
