@@ -40,7 +40,7 @@ header {
 }
 
 .image-box {
-    width: 400px;
+    width: 150px;
     height: 60px;
     align-items: center;
     justify-items: right;
@@ -54,7 +54,7 @@ header {
 }
 
 input {
-    margin-left: 25px;
+    margin-left: 50px;
     width:200px;
     height: 45px;
     padding:0 15px 0 40px;
@@ -92,6 +92,16 @@ h1 {
         cursor: pointer;
         color:#2994ff;
         transition: ease-in-out 0.25s;
+    }
+
+    .item {
+        align-items: center;
+    }
+
+    .fa-solid {
+        color:#2994ff;
+        font-size: 20px;
+        margin-right: 5px;
     }
 }
 
