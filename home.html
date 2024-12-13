@@ -23,19 +23,44 @@
           <h1>Fakebook</h1>
         </div>
         <div class="items flex">
-          <p>Friends</p>
-          <p>Pages</p>
-          <p>Groups</p>
-          <p>My ads</p>
-          <p>Settings</p>
+          <p>Home</p>
+          <p>Network</p>
+          <p>Notification</p>
+          <p>Jobs</p>
+          <p>Work</p>
         </div>
         <div class="image-box grid">
           <img src="./assets/img/profile image.png" class="profile-image">
         </div>
       </section>
     </header>
-    <main class="container grid">
-       <section class="post-box">
+    <main class="container flex space">
+      <section class="profile-box grid">
+        <div class="profile-text grid">
+          <img src="./assets/img/profile image.png" class="user-image">
+          <h2>Duan Wang</h2>
+          <p>Web developer</p>
+          <a href="https://gorgeous-scone-b74034.netlify.app/" target="_blank">
+            <i class="fa-solid fa-link"></i>https://www.duan.com
+          </a>
+        </div>
+        <div class="profile-number flex">
+          <div class="col-one grid">
+            <h2>365</h2>
+            <p>Connections</p>
+          </div>
+          <div class="col-two grid">
+            <h2>85</h2>
+            <p>Viewers</p>
+          </div>
+        </div>
+        <div class="profile-tools grid">
+          <p>Free Access exclusive tools</p>
+          <button class="profile-btn">UPGRADE TO PREMIUM</button>
+        </div>
+      </section>
+      <section>
+        <div class="post-box grid">
           <div>
             <textarea class="message" cols="3" rows="3" placeholder="What's new, Duan?"></textarea>
           </div>
@@ -47,10 +72,22 @@
             <p class="file-name"></p>
             <button class="post-button" disabled>Post</button>
           </div>
-       </section>
-       <section class='posts-section'></section>
+        </div>
+       <div class='posts-section'></div>
+      </section>
+      <section class="friends-box grid">
+        <div class="title flex">
+          <h2>People you may know</h2>
+        </div>
+        <div class="user-container"></div>
+      </section>
     </main>
-    <footer></footer>
+    <div class="fake-div"></div>
+    <footer class="flex">
+      <div>
+        <p>&copy; 2024 DUAN WANG | All Rights Reserved</p>
+      </div>
+    </footer>
     <section class="info-modal modal">
       <div class="modal-content grid">
           <h2>Welcome! <span class='subscriber-name'></span></h2>
