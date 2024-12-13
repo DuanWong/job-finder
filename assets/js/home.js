@@ -76,7 +76,6 @@ class Subscriber extends User {
 const profileImage = select('.profile-image');
 const modal = select('.info-modal');
 const subscriberContent = select('.subscriber-content');
-const subscriberName = select('.subscriber-name');
 const imageUpload = select('.image-upload');
 const fileName = select('.file-name');
 const postBtn = select('.post-button');
@@ -87,7 +86,7 @@ const xMark= select('.fa-xmark');
 const subscriber = new Subscriber(
     111111,
     "Duan Wang",
-    "DuanWang666",
+    "duanwang",
     "duan@example.com",
     ["Page1", "Page2"],
     ["MITT", "Developer"],
