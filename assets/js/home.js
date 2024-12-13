@@ -3,7 +3,7 @@
 import { listen, select } from './utility.js';
 
 /*--------------------------------------------*/
-/*User and Subscriber                         */
+/*Class                                       */
 /*--------------------------------------------*/
 
 class User {
@@ -70,13 +70,19 @@ class Subscriber extends User {
 }
 
 /*--------------------------------------------*/
-/*Modal                                       */
+/*Object, Variables, DOM                      */
 /*--------------------------------------------*/
 
-const profileImage = document.querySelector('.profile-image');
-const modal = document.querySelector('.info-modal');
-const subscriberContent = document.querySelector('.subscriber-content');
-const subscriberName = document.querySelector('.subscriber-name');
+const profileImage = select('.profile-image');
+const modal = select('.info-modal');
+const subscriberContent = select('.subscriber-content');
+const subscriberName = select('.subscriber-name');
+const imageUpload = select('.image-upload');
+const fileName = select('.file-name');
+const postBtn = select('.post-button');
+const postsSection = select('.posts-section');
+const textInput = select('.message');
+const userContainer = select('.user-container'); 
 const subscriber = new Subscriber(
     111111,
     "Duan Wang",
@@ -86,25 +92,18 @@ const subscriber = new Subscriber(
     ["MITT", "Developer"],
     true
 );
-
-profileImage.addEventListener('click', () => {
-    subscriberName.innerText = subscriber.getName();
-    subscriberContent.innerText = subscriber.getInfo();
-    modal.style.display = 'flex'; 
-});
-
-modal.addEventListener('click', (event) => {
-    if (event.target === modal) {
-        modal.style.display = 'none';
-    }
-});
+const API_URL = 'https://randomuser.me/api/?nat=CA&results=10&seed=same';
+const options = {
+    method: 'GET',
+    headers: {
+        'Content-Type': 'application/json; charset=UTF-8'
+    },
+    mode: 'cors'
+}
 
 /*--------------------------------------------*/
-/* File name display                          */
+/*Functions                                   */
 /*--------------------------------------------*/
-
-const imageUpload = document.querySelector('.image-upload');
-const fileName = document.querySelector('.file-name');
 
 function fileNameDisplay() {
     const file = imageUpload.files[0];
@@ -115,18 +114,6 @@ function fileNameDisplay() {
         fileName.innerText = ''; 
     }
 }
-
-imageUpload.addEventListener('change', function() {
-    fileNameDisplay(imageUpload);
-});
-
-/*--------------------------------------------*/
-/*Post                                        */
-/*--------------------------------------------*/
-
-const postBtn = document.querySelector('.post-button');
-const postsSection = document.querySelector('.posts-section');
-const textInput = document.querySelector('.message');
 
 function togglePostBtn() {
     if (textInput.value.trim() !== '' || imageUpload.files.length > 0) {
@@ -139,9 +126,6 @@ function togglePostBtn() {
         postBtn.style.cursor = 'not-allowed';
     }
 }
-
-textInput.addEventListener ('input', togglePostBtn);
-imageUpload.addEventListener ('change', togglePostBtn);
 
 function formatDate(date) {
     const options = { 
@@ -194,7 +178,70 @@ function createPost(textInput, imageUpload) {
     postsSection.prepend(post);
 }
 
-postBtn.addEventListener('click', function() {
+async function getUsers() {
+    try {
+        const response = await fetch(API_URL, options);
+
+        if (!response.ok) {
+            throw new Error(`${response.statusText} (${response.status})`);
+        }
+
+        const data = await response.json();
+        const users = data.results;
+
+        userContainer.innerHTML = '';
+
+        users.forEach(user => {
+            const profilePicture = user.picture.large;
+            const fullName = `${user.name.first} ${user.name.last}`;
+            const city = user.location.city;
+
+            const userDiv = document.createElement('div');
+            userDiv.classList.add('user');
+
+            userDiv.innerHTML = `
+                <img src="${profilePicture}" alt="Profile Picture"/>
+                <div>
+                  <h3>${fullName}</h3>
+                  <p>City: ${city}</p>
+                </div>
+                <i class="fa-solid fa-user-plus"></i>
+            `;
+
+            userContainer.appendChild(userDiv);
+        });
+    } catch (error) {
+        console.log(error.message);
+    }
+}
+
+getUsers();
+
+/*--------------------------------------------*/
+/*EventListener                               */
+/*--------------------------------------------*/
+
+listen(profileImage, 'click', () => {
+    subscriberName.innerText = subscriber.getName();
+    subscriberContent.innerText = subscriber.getInfo();
+    modal.style.display = 'flex'; 
+});
+
+listen(modal, 'click', (event) => {
+    if (event.target === modal) {
+        modal.style.display = 'none';
+    }
+});
+
+listen(imageUpload, 'change', function() {
+    fileNameDisplay(imageUpload);
+});
+
+listen(textInput, 'input', togglePostBtn);
+
+listen(imageUpload, 'change', togglePostBtn);
+
+listen(postBtn, 'click', function() {
     createPost(textInput, imageUpload);
     
     textInput.value = '';
