@@ -355,32 +355,31 @@ h1 {
 .modal {
     display: none; 
     position: fixed;
-    top: 0;
+    top: 60px;
     left: 0;
-    width: 100%;
+    right: 0;
+    width: min(100% - 30px, 1200px);
+    margin-inline: auto;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);  
-    justify-content: center;
-    align-items: center;
 }
 
 .modal-content {
+    position: absolute;
+    top: 0; 
+    right: 0; 
     background-color: #fff;
     padding: 20px 10px;
     width: 250px;
     border-radius: 8px;
     text-align: left;
     font-size: 16px;
+    justify-items: left;
     gap:10px;
+    box-shadow: 0 1px 2px 2px rgba(0, 0, 0, 0.1);
 
     h2 {
         color: #2994ff;
         font-size: 20px;
-    }
-
-    h3 {
-        color: #2994ff;
-        font-size: 18px;
     }
 
     p {
@@ -389,16 +388,27 @@ h1 {
     }
 }
 
-.modal-image {
-    margin: 10px 0;
-    width:150px;
-    height:150px;
-    border-radius: 50%;
+.sign-out {
+    width: 230px;
+    height: 40px;
+    background-color: #f0f2f5;
+    border-radius: 10px;
+    color:#800a20;
+    font-size: 20px;
+    text-decoration: none;
+    text-align: center;
+    line-height: 40px;
+}
+
+.sign-out:hover {
+    background-color: #e8e9eb;
+    transition: ease-in-out 0.25s;
 }
 
 /*--------------------------------------------*/
 /*footer                                      */
 /*--------------------------------------------*/
+
 .fake-div {
     height:100px;
 }
@@ -412,3 +422,4 @@ footer {
     position: fixed;
     inset: auto 0 0 0;
 }
+

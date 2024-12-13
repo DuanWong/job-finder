@@ -156,13 +156,6 @@ function createPost(textInput, imageUpload) {
     `;
     post.appendChild(postHeader);
 
-    const newProfileImage = postHeader.querySelector('.profile-image');
-    newProfileImage.addEventListener('click', () => {
-        subscriberName.innerText = subscriber.getName();
-        subscriberContent.innerText = subscriber.getInfo();
-        modal.style.display = 'flex'; 
-    });
-
     const postContent = document.createElement('div');
     postContent.classList.add('post-content');
     if (postText) {
@@ -222,7 +215,6 @@ getUsers();
 /*--------------------------------------------*/
 
 listen(profileImage, 'click', () => {
-    subscriberName.innerText = subscriber.getName();
     subscriberContent.innerText = subscriber.getInfo();
     modal.style.display = 'flex'; 
 });
