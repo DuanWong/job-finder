@@ -67,7 +67,6 @@ form {
     border: none;
     border-radius: 5px;
     font-size: 16px;
-    transition: border-color 0.3s ease;
 }
 
 .input-group input:focus {
@@ -106,12 +105,18 @@ button:hover {
         flex-direction: column;
     }
 
-    .login-image {
-        display: none; 
-    }
+
 
     .login-form-container {
         padding: 20px;
+    }
+
+    .login-image {
+        width: 100%;  
+    }
+
+    .login-form-container {
+        width: 100%;
     }
 
     form {
