@@ -1,8 +1,5 @@
 @charset "utf-8";
 
-
-
-/* Reset default browser styles */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -15,40 +12,37 @@ body, html {
     background-color: #f0f2f5;
 }
 
-/* Common Styles for Login and Registration Pages */
-.login-page, .registration-page {
+.login-page {
     display: flex;
     height: 100%;
 }
 
-/* Left Side Image */
-.login-image, .registration-image {
-    flex: 1;
-    background-color: #0073b1; /* LinkedIn-like blue */
+.login-image {
+    width: 50%;
+    
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.login-image img, .registration-image img {
-    width: 80%;
-    max-width: 400px;
+.login-image img {
+    width: 100%;
+    max-width: 1000px;
     border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    
 }
 
-/* Right Side Form Container */
-.login-form-container, .registration-form-container {
-    flex: 1;
+.login-form-container {
+    width: 50%;
     display: flex;
-    flex-direction: column; /* Stack children vertically */
+    flex-direction: column; 
     justify-content: center;
     align-items: center;
     padding: 40px;
-    background-color: #ffffff;
+    background-color: #f0f2f5;
 }
 
-.login-form-container h2, .registration-form-container h2 {
+.login-form-container h2 {
     margin-bottom: 20px;
     color: #0073b1;
     text-align: center;
@@ -109,33 +103,16 @@ button:hover {
     font-size: 14px;
 }
 
-.register-link, .login-link {
-    margin-top: 15px;
-    text-align: center;
-    font-size: 14px;
-}
-
-.register-link a, .login-link a {
-    color: #0073b1;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.register-link a:hover, .login-link a:hover {
-    text-decoration: underline;
-}
-
-/* Responsive Design */
 @media (max-width: 768px) {
-    .login-page, .registration-page {
+    .login-page {
         flex-direction: column;
     }
 
-    .login-image, .registration-image {
-        display: none; /* Hide the image on smaller screens */
+    .login-image {
+        display: none; 
     }
 
-    .login-form-container, .registration-form-container {
+    .login-form-container {
         padding: 20px;
     }
 
