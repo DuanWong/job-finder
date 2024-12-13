@@ -25,7 +25,8 @@ body, html {
 .login-image img {
     width: 100%;
     max-width: 700px;
-    border-radius: 10px;   
+    border-radius: 10px; 
+    padding-right: 20%;  
 }
 
 .login-form-container {
@@ -40,7 +41,7 @@ body, html {
 
 .login-form-container h2 {
     margin-bottom: 20px;
-    color: #0073b1;
+    color: #2994ff;
     text-align: center;
 }
 
@@ -63,14 +64,14 @@ form {
 
 .input-group input {
     padding: 10px 15px;
-    border: 1px solid #cccccc;
+    border: none;
     border-radius: 5px;
     font-size: 16px;
     transition: border-color 0.3s ease;
 }
 
 .input-group input:focus {
-    border-color: #0073b1;
+    border:none;
     outline: none;
     box-shadow: 0 0 5px rgba(0, 115, 177, 0.3);
 }
@@ -78,7 +79,7 @@ form {
 button {
     width: 100%;
     padding: 12px;
-    background-color: #0073b1;
+    background-color: #419efb;
     color: #ffffff;
     border: none;
     border-radius: 5px;
@@ -89,14 +90,15 @@ button {
 }
 
 button:hover {
-    background-color: #005582;
+    background-color: #0a7ef3;
 }
 
 .error-message {
     color: red;
-    margin-top: 10px;
+    margin: 5px 0;
     text-align: center;
     font-size: 14px;
+    height: 20px;
 }
 
 @media (max-width: 768px) {

@@ -4,8 +4,7 @@
 import { listen, select } from './utility.js';
 
 const errorElement = select(".error-message");
-const loginButton = select(".submit");
- 
+const loginForm = select(".loginForm");
 const sampleUser = {
     username: 'user123',
     password: 'password123'
@@ -19,8 +18,8 @@ function initializeUsers() {
 
 initializeUsers();
 
-function handleLogin() {
-    
+function handleLogin(event) {
+    event.preventDefault(); // Prevent the default form submission
     const enteredUsername = select(".username").value.trim();
     const enteredPassword = select(".password").value.trim();
 
@@ -36,4 +35,4 @@ function handleLogin() {
     }
 }
 
-listen(loginButton, 'click', handleLogin);
+listen(loginForm, 'submit', handleLogin);
