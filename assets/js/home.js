@@ -83,6 +83,7 @@ const postBtn = select('.post-button');
 const postsSection = select('.posts-section');
 const textInput = select('.message');
 const userContainer = select('.user-container'); 
+const xMark= select('.fa-xmark');
 const subscriber = new Subscriber(
     111111,
     "Duan Wang",
@@ -223,6 +224,10 @@ listen(modal, 'click', (event) => {
     if (event.target === modal) {
         modal.style.display = 'none';
     }
+});
+
+listen(xMark, 'click', () => {
+    modal.style.display = 'none';
 });
 
 listen(imageUpload, 'change', function() {

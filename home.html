@@ -19,8 +19,11 @@
   <body>
     <header>
       <section class="container space flex">
-        <div class="fakebook-box">
+        <div class="fakebook-box flex">
           <h1>JobLinker</h1>
+          <form>
+            <input type="text" placeholder="Job title" required>
+          </form>
         </div>
         <div class="items flex">
           <p>Home</p>
@@ -62,7 +65,7 @@
       <section>
         <div class="post-box grid">
           <div>
-            <textarea class="message" cols="3" rows="3" placeholder="What's new, Duan?"></textarea>
+            <textarea class="message" cols="3" rows="3" placeholder="Write here. What are you looking for?"></textarea>
           </div>
           <div>
             <input type="file" id="file-upload" class="image-upload" accept="image/*">
@@ -91,11 +94,14 @@
     <div class="container">
       <section class="info-modal modal">
         <div class="modal-content grid">
+          <div class="welcome flex space">
             <h2>Welcome! <span class='subscriber-name'></span></h2>
-            <div>
-              <p class="subscriber-content"></p>
-            </div>
-            <a href="./index.html" class="sign-out">Sign out</a>
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+          <div>
+            <p class="subscriber-content"></p>
+          </div>
+          <a href="./index.html" class="sign-out">Sign out</a>
         </div>
       </section>
     </div>
