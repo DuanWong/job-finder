@@ -3,18 +3,13 @@
 
 import { listen, select } from './utility.js';
 
- const enteredUsername = select(".username").value.trim();
- const enteredPassword = select(".password").value.trim();
- const errorElement = select(".error-message");
- const loginForm = select(".loginForm");
+const errorElement = select(".error-message");
+const loginButton = select(".submit");
  
-
 const sampleUser = {
     username: 'user123',
     password: 'password123'
 };
-
-
 
 function initializeUsers() {
     if (!localStorage.getItem('users')) {
@@ -24,11 +19,14 @@ function initializeUsers() {
 
 initializeUsers();
 
-listen(loginForm, 'submit', function(event) {
-    event.preventDefault(); 
+function handleLogin() {
+    
+    const enteredUsername = select(".username").value.trim();
+    const enteredPassword = select(".password").value.trim();
 
     const users = JSON.parse(localStorage.getItem('users')) || [];
     const userMatch = users.find(user => user.username === enteredUsername && user.password === enteredPassword);
+
     if (userMatch) {
         localStorage.setItem('currentUser', JSON.stringify(userMatch));
 
@@ -36,4 +34,6 @@ listen(loginForm, 'submit', function(event) {
     } else {
         errorElement.textContent = 'Incorrect username or password.';
     }
-});
+}
+
+listen(loginButton, 'click', handleLogin);
