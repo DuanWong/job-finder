@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr ">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Duan Wang">
+    <meta name="description" content="My web project">
+    <meta name="keyword" content="html, css, web, seo, web development, JS">
+    <title>JobLinker</title>
+    <link rel="icon" href="./assets/img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mrspecht/cdn/reset.css" media="all">
+    <link rel="stylesheet" href="./assets/css/style.css" media="all">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" >
+    <script type="module" src="./assets/js/index.js"></script>
+  </head>
+  <body>
+    <header>
+      <section class="container space flex">
+        <div class="fakebook-box flex">
+          <h1>JobLinker</h1>
+          <form>
+            <input type="text" placeholder="Job title" required>
+          </form>
+        </div>
+        <div class="items flex">
+          <div class="item flex">
+            <i class="fa-solid fa-house"></i>
+            <p>Home</p>
+          </div>
+          <div class="item flex">
+            <i class="fa-solid fa-users"></i>
+            <p>Network</p>
+          </div>
+          <div class="item flex">
+            <i class="fa-solid fa-bell"></i>
+            <p>Notification</p>
+          </div>
+          <div class="item flex">
+            <i class="fa-solid fa-briefcase"></i>
+            <p>Jobs</p>
+          </div>
+          <div class="item flex">
+            <i class="fa-solid fa-calendar-days"></i>
+            <p>Work</p>
+          </div>
+        </div>
+        <div class="image-box grid">
+          <img src="./assets/img/profile image.png" class="profile-image">
+        </div>
+      </section>
+    </header>
+    <main class="container flex space">
+      <section class="profile-box grid">
+        <div class="profile-text grid">
+          <img src="./assets/img/profile image.png" class="user-image">
+          <h2>Duan Wang</h2>
+          <p>Web developer</p>
+          <a href="https://gorgeous-scone-b74034.netlify.app/" target="_blank">
+            <i class="fa-solid fa-link"></i>https://www.duan.com
+          </a>
+        </div>
+        <div class="profile-number flex">
+          <div class="col-one grid">
+            <h2>365</h2>
+            <p>Connections</p>
+          </div>
+          <div class="col-two grid">
+            <h2>85</h2>
+            <p>Viewers</p>
+          </div>
+        </div>
+        <div class="profile-tools grid">
+          <p>Free Access exclusive tools</p>
+          <button class="profile-btn">UPGRADE TO PREMIUM</button>
+        </div>
+      </section>
+      <section>
+        <div class="post-box grid">
+          <div>
+            <textarea class="message" cols="3" rows="3" placeholder="Welcome! Start building your professional presence with a quick post."></textarea>
+          </div>
+          <div>
+            <input type="file" id="file-upload" class="image-upload" accept="image/*">
+            <label for="file-upload" class="custom-upload-button">
+               <i class="image-button fa-regular fa-image"></i>
+            </label>
+            <p class="file-name"></p>
+            <button class="post-button" disabled>Post</button>
+          </div>
+        </div>
+        <div class='posts-section'>
+          <div class="post-display">
+            <div class="post-header">
+              <div class="image-div">
+                <img class="profile-image" src="assets/img/profile image.png" alt="Profile Pic">
+                <p class="name">Duan Wang</p>
+              </div>
+              <div class="date-box">
+                <p class="date">2025-06-26</p>
+              </div>
+            </div>
+            <div class="post-content">
+              <p>Keep your face always toward the sunshine—and shadows will fall behind you.</p>
+              <img src="assets/img/example.webp" alt="Post Image">
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="friends-box grid">
+        <div class="title flex">
+          <h2>People you may know</h2>
+        </div>
+        <div class="user-container"></div>
+      </section>
+    </main>
+    <div class="fake-div"></div>
+    <footer class="flex">
+      <div>
+        <p>&copy; 2024 DUAN WANG | All Rights Reserved</p>
+      </div>
+    </footer>
+    <div class="container">
+      <section class="info-modal modal">
+        <div class="modal-content grid">
+          <div class="welcome flex space">
+            <h2>Welcome! <span class='subscriber-name'></span></h2>
+            <div class="xmark-bg grid">
+              <i class="fa-solid fa-xmark"></i>
+            </div>
+          </div>
+          <div>
+            <p class="subscriber-content"></p>
+          </div>
+          <div class="sign-out">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <a href="./index.html" >Sign out</a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
