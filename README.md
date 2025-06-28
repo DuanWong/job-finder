@@ -17,7 +17,7 @@ Users can browse different modules to stay updated, connect with professionals, 
 
 ## Main page
 
-![Main page](./assets/img/main-page.png)
+![Main page](./assets/img/main-page-screenshot.png)
 
 ## The technologies used to build the web app
 - **Front-end**
