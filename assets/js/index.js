@@ -85,11 +85,11 @@ const userContainer = select('.user-container');
 const xMark= select('.fa-xmark');
 const subscriber = new Subscriber(
     111111,
-    "Duan Wang",
-    "duanwang",
-    "duan@example.com",
+    "Julia Smith",
+    "juliasmith",
+    "julia@example.com",
     ["Page1", "Page2"],
-    ["MITT", "Developer"],
+    ["Winnipeg", "Designer"],
     true
 );
 const API_URL = 'https://randomuser.me/api/?nat=CA&results=10&seed=same';
