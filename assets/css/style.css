@@ -8,6 +8,7 @@ body {
     height: 100%;
     background-color: #f2f2f2;
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .container {
@@ -116,6 +117,13 @@ h1 {
     cursor: pointer;
     transform: scale(1.1);
     transition: ease-in-out 0.25s;
+}
+
+.menu-toggle {
+    line-height: 80px;
+    color:#2994ff;
+    font-size: 20px;
+    display:none;
 }
 
 /*--------------------------------------------*/
@@ -273,18 +281,20 @@ h1 {
     height: 200px;
     background-color: #fff;
     border-radius: 10px;
-    position:relative;
+}
+
+.message-box {
+    width:100%;
+    padding: 20px 20px 0;
 }
 
 .message {
     padding: 15px;
-    width: 560px;
+    width: 100%;
     height:110px;
     background-color: #f0f2f5;
     color: #09090a;
     border-radius: 10px;
-    position: absolute;
-    inset: 20px;
     resize: none;
     cursor: pointer;
 }
@@ -294,6 +304,19 @@ h1 {
     transition: ease-in-out 0.25s;
 }
 
+.post-btn-set {
+    width: 100%;
+    padding:20px;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.image-upload-box {
+    display: flex;
+}
+
 .post-button {
     width: 70px;
     height: 35px;
@@ -301,8 +324,6 @@ h1 {
     background-color: #82b7eb;
     font-size: 15px;
     color:#fff;
-    position: absolute;
-    inset: auto 20px 20px auto;
     cursor: not-allowed;
 }
 
@@ -313,8 +334,6 @@ h1 {
 .image-button {
     color:#09090a;
     font-size: 28px;
-    position: absolute;;
-    inset: auto auto 20px 20px;
 }
 
 .image-button:hover {
@@ -325,9 +344,8 @@ h1 {
 
 .file-name {
     color: #09090a;
-    position: absolute;;
-    inset: auto auto 28px 65px;
     font-size: 15px;
+    margin-left: 15px;
 }
 
 .post-display {
@@ -337,7 +355,7 @@ h1 {
     border-radius: 10px;
 
     .post-header {
-        width: 600px;
+        width: 100%;
         height: 60px;
         display: flex;
         justify-content: space-between;
@@ -345,7 +363,7 @@ h1 {
 
     .image-div {
         padding-left: 20px;
-        width:200px;
+        width:50%;
         height: 60px;
         gap:20px;
         font-weight: 500;
@@ -356,7 +374,7 @@ h1 {
 
     .date-box {
         padding-right: 20px;
-        width:200px;
+        width:50%;
         height:60px;
         color: #6e6e6e;
         text-align: right;
@@ -374,6 +392,7 @@ h1 {
     img {
         margin-top: 10px;
         width: 100%;
+        height: auto;
         border-radius: 10px;
     }
 }
@@ -472,6 +491,7 @@ h1 {
 }
 
 footer {
+    width: 100%;
     height: 60px;
     justify-content: center;
     line-height:60px;
@@ -479,3 +499,53 @@ footer {
     color:#fff;
 }
 
+/*--------------------------------------------*/
+/*Media screen                                */
+/*--------------------------------------------*/
+
+@media screen and (max-width: 1200px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .item {
+    display:none;
+  }
+
+  .profile-box {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+    .friends-box {
+        display:none;
+    }
+
+    .post-box,
+    .post-display,
+    .post-header,
+    .post-content,
+    .message,
+    .post-btn-set {
+        width: 100%;
+    }
+
+    .image-box {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .fakebook-box {
+        width: 100%;
+    }
+
+    .menu-toggle {
+        display:none;
+    }
+
+    input {
+        width: 50%;
+    }
+}
